@@ -1,5 +1,5 @@
 module Api
-    module V    1
+    module V1
         class ReviewsController < ApplicationController
             protect_from_forgery with: :null_session
 
