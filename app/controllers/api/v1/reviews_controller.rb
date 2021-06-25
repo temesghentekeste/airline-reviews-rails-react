@@ -1,5 +1,5 @@
 module Api
-    module v1
+    module V    1
         class ReviewsController < ApplicationController
 
             def create 

@@ -1,5 +1,5 @@
 module Api
-    module v1
+    module V1
         class AirlinesController < ApplicationController
              # GET /api/v1/airlines
             def index 
