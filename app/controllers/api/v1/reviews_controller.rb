@@ -9,7 +9,7 @@ module Api
                 if review.save
                     render json: ReviewSerializer.new(review).serialized_json
                 else
-                    render json: { error: review.errors.messages }, staus: 422
+                    render json: { error: review.errors.messages }, status: 422
                 end
             end
 
@@ -26,7 +26,7 @@ module Api
             private 
 
             def reviews_params
-                params.require(:reviews).permit(:title, :description, :score, :airline_id)
+                params.require(:review).permit(:title, :description, :score, :airline_id)
             end
         end
     end
