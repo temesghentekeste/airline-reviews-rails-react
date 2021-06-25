@@ -4,7 +4,6 @@ import Routes from './Routes';
 const App = () => {
   return (
     <div>
-      App
       <Routes />
     </div>
   );
