@@ -24,3 +24,18 @@ arlines = Airline.create([
       image_url: "https://open-flights.s3.amazonaws.com/American-Airlines.png" 
     }
 ])
+
+reviews = Review.create([
+    {
+        title: 'Great airline',
+        description: 'I have a lovely time',
+        score: 5,
+        airline: Airline.first
+    },
+    {
+        title: 'Bad experience',
+        description: 'Didgusting snack',
+        score: 1,
+        airline: Airline.first
+    }
+])
