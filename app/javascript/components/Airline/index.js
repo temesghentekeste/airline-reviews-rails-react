@@ -50,7 +50,7 @@ const Airline = (props) => {
       <div className="airline-score">{avg_score}</div>
       <AirlineName>
         <LinkWrapper>
-          <a to={`/airlines/${slug}`}>View Airline</a>
+          <Link to={`/airlines/${slug}`}>View Airline</Link>
         </LinkWrapper>
       </AirlineName>
     </Card>
