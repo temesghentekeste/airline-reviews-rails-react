@@ -9,6 +9,6 @@ class Airline < ApplicationRecord
 
     def avg_score
         return 0 if reviews.count.zero? 
-        reviews.average(:score).round(2).to_f
+        (reviews.average(:score).to_f / reviews.count.to_f).to_f
     end
 end
