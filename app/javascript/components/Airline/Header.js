@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
     border-radius: 100%;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   h1 {
     display: flex;
     align-items: center;
@@ -34,7 +34,6 @@ const Header = (props) => {
   const total = props.reviews.length;
   const { name, image_url, avg_score } = props.attributes;
 
- 
   return (
     <Wrapper>
       <h1>
@@ -43,7 +42,7 @@ const Header = (props) => {
       <div>
         <TotalRevies>{total} User Reviews</TotalRevies>
         <div className="totalRating"></div>
-        <TotalOutOf>{avg_score} out of 5</TotalOutOf>
+        <TotalOutOf>{Math.round(avg_score)} out of 5</TotalOutOf>
       </div>
     </Wrapper>
   );

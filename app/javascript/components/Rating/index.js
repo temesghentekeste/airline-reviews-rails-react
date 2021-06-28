@@ -7,7 +7,7 @@ const UnratedStarContainer = styled.div`
 
 const RatedStarContainer = styled.div`
     display: inline-block;
-    color: red;
+    color: hsl(46, 99%, 50%);;
 `
 
 

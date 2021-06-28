@@ -47,8 +47,7 @@ const Airline = (props) => {
       <AirlineLogo>
         <img src={image_url} alt={name} />
       </AirlineLogo>
-      <div className="airline-name">{name}</div>
-      <div className="airline-score">{avg_score}</div>
+      <AirlineName>{name}</AirlineName>
       <Rating score={avg_score}/>
       <AirlineName>
         <LinkWrapper>
