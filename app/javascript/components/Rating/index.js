@@ -1,5 +1,16 @@
 import React from 'react';
-import './Rating.css';
+import styled from 'styled-components'
+
+const UnratedStarContainer = styled.div`
+    display: inline-block;
+`
+
+const RatedStarContainer = styled.div`
+    display: inline-block;
+    color: red;
+`
+
+
 
 const Rating = (props) => {
   if (!props.score) {
@@ -9,16 +20,25 @@ const Rating = (props) => {
   const score = props.score;
 
   const stars = [1, 2, 3, 4, 5].map((item, index) => {
-    return (
-      <div
+
+    if(item <= score ) {
+        return (
+      <RatedStarContainer
         key={index}
-        className={
-          item <= score ? 'rating-container rating' : 'rating-container'
-        }
       >
         <i className="fa fa-star"></i>
-      </div>
-    );
+      </RatedStarContainer>
+    ) 
+    } else {
+        return (
+            <UnratedStarContainer
+              key={index}
+            >
+              <i className="fa fa-star"></i>
+            </UnratedStarContainer>
+          )
+    }
+   ;
   });
   return <div>{stars}</div>;
 };
