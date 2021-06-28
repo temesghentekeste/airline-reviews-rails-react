@@ -98,7 +98,7 @@ const Airline = (props) => {
             <Main>
               <Header
                 attributes={airline.data.attributes}
-                reviews={airline.data.relationships.reviews.data}
+                reviews={airline.included}
               />
               <div className="reviews">{reviews && reviews}</div>
             </Main>

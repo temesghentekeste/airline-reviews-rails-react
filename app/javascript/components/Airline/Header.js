@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -31,9 +31,10 @@ const TotalOutOf = styled.div`
 `;
 
 const Header = (props) => {
-  const { name, image_url, avg_score } = props.attributes;
   const total = props.reviews.length;
-  console.log(props.reviews)
+  const { name, image_url, avg_score } = props.attributes;
+
+ 
   return (
     <Wrapper>
       <h1>
