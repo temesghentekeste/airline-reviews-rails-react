@@ -3,6 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import Header from './Header';
 import ReviewForm from './ReviewForm';
+import Review from './Review';
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -60,16 +61,16 @@ const Airline = (props) => {
 
     const csrfToken = document.querySelector('[name=csrf-token]').content;
     axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
-    console.log(csrfToken)
+    console.log(csrfToken);
 
     const airline_id = parseInt(airline.data.id);
-    console.log({...review, airline_id})
+    console.log({ ...review, airline_id });
     axios
       .post('/api/v1/reviews', { ...review, airline_id })
       .then((res) => {
-        const included = [...airline.included, res.data.data]
-        setAirline({...airline, included})
-        setReview({ title: '', description: '', score: 0})
+        const included = [...airline.included, res.data.data];
+        setAirline({ ...airline, included });
+        setReview({ title: '', description: '', score: 0 });
       })
       .catch((err) => {
         console.log(err);
@@ -78,9 +79,17 @@ const Airline = (props) => {
 
   const setRating = (score, e) => {
     e.preventDefault();
-    setReview({...review, score})
-  }
+    setReview({ ...review, score });
+  };
 
+  let reviews;
+
+  if( loaded && airline.included) {
+    reviews = airline.included.map((item, index) => {
+      return <Review key={index} attributes={item.attributes} />;
+    });
+  
+  }
   return (
     <Wrapper>
       {loaded && (
@@ -89,9 +98,9 @@ const Airline = (props) => {
             <Main>
               <Header
                 attributes={airline.data.attributes}
-                reviews={airline.data.relationships.reviews}
+                reviews={airline.data.relationships.reviews.data}
               />
-              <div className="reviews"></div>
+              <div className="reviews">{reviews && reviews}</div>
             </Main>
           </Column>
           <Column>

@@ -33,6 +33,7 @@ const TotalOutOf = styled.div`
 const Header = (props) => {
   const { name, image_url, avg_score } = props.attributes;
   const total = props.reviews.length;
+  console.log(props.reviews)
   return (
     <Wrapper>
       <h1>

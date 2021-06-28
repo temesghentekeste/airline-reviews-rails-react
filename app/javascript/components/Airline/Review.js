@@ -1,11 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-const Review = () => {
-    return (
-        <div>
-            Review
-        </div>
-    )
-}
+const Review = (props) => {
+  const { score, title, description } = props.attributes;
+  return (
+    <div className="card">
+      <div className="rating-container">
+        <div className="rating-score"> {score}</div>
 
-export default Review
+        <div className="title">{title}</div>
+        <div className="description">{description}</div>
+      </div>
+    </div>
+  );
+};
+
+export default Review;
