@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Rating from '../Rating'
 
 const Card = styled.div`
   border: 1px solid #efefef;
@@ -48,6 +49,7 @@ const Airline = (props) => {
       </AirlineLogo>
       <div className="airline-name">{name}</div>
       <div className="airline-score">{avg_score}</div>
+      <Rating score={avg_score}/>
       <AirlineName>
         <LinkWrapper>
           <Link to={`/airlines/${slug}`}>View Airline</Link>
