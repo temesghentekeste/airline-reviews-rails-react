@@ -46,9 +46,8 @@ const Review = (props) => {
   return (
     <Card>
       <RatingContianer>
-        <div className="score">{score}</div>
+        <Rating score={score} />
       </RatingContianer>
-      <Rating score={score} />
       <Title>{title}</Title>
       <Description>{description}</Description>
     </Card>

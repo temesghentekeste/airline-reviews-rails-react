@@ -9,11 +9,16 @@ const Rating = (props) => {
   const score = props.score;
 
   const stars = [1, 2, 3, 4, 5].map((item, index) => {
-    if (item <= score) {
-      return <i className="fa fa-star rating" key={index}></i>;
-    } else {
-      return <i className="fa fa-star" key={index}></i>;
-    }
+    return (
+      <div
+        key={index}
+        className={
+          item <= score ? 'rating-container rating' : 'rating-container'
+        }
+      >
+        <i className="fa fa-star"></i>
+      </div>
+    );
   });
   return <div>{stars}</div>;
 };
