@@ -2,8 +2,8 @@ import React from 'react';
 import './Rating.css';
 
 const Rating = (props) => {
-  if (!props) {
-    return '<div></div>';
+  if (!props.score) {
+    return <div></div>;
   }
 
   const score = props.score;
