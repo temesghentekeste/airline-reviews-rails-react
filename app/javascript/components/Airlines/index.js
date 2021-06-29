@@ -36,7 +36,7 @@ const Airlines = () => {
       .get('/api/v1/airlines.json')
       .then((res) => setAirlines(res.data.data))
       .catch((error) => console.log(error));
-  }, []);
+  }, [airlines.length]);
 
   const grid = airlines.map((item) => (
     <Airline key={item.attributes.name} attributes={item.attributes} />
